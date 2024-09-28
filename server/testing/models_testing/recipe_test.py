@@ -2,16 +2,15 @@ import pytest
 from sqlalchemy.exc import IntegrityError
 
 from app import app
-from models import db, Recipe
+from models import db, Recipe, User
 
 class TestRecipe:
-    '''User in models.py'''
+    '''Recipe in models.py'''
 
     def test_has_attributes(self):
         '''has attributes title, instructions, and minutes_to_complete.'''
         
         with app.app_context():
-
             Recipe.query.delete()
             db.session.commit()
 
